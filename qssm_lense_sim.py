@@ -75,7 +75,7 @@ categories = {
         "10": ("Bullet Cluster (1E 0657-558)", 2e15, 1.2, 3.2, 0.3, 0.32, (0.35, 0.35))
     }
 }
-
+# gello
 # Selection menu
 print("Select a gravitational lensing object by category:")
 for cat, objs in categories.items():
