@@ -1,0 +1,19 @@
+# LaTeX junk files
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bbl
+*.blg
+
+# Python cache (if you have figure generation code)
+__pycache__/
+.ipynb_checkpoints/
+
+# DS_Store (macOS users — optional)
+.DS_Store
