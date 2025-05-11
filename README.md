@@ -1,51 +1,90 @@
 # Genesis Field Paper I: Phase Modulation and the Hubble Tension
 
-This repository contains the LaTeX sources, figures, and supporting Python analysis scripts for the first paper in the Genesis Field Theory series.
-
-**Paper I** derives a ripple structure in the cosmic expansion rate based on global coherence phase modulation and applies it to observational datasets, providing a potential resolution to the Hubble tension between local and distant measurements.
+This repository contains the LaTeX sources, figures, handwritten derivations, and Python scripts for **Paper I** in the Genesis Field Theory (FQMT) series. **Paper I** introduces a ripple modulation model based on global coherence phase dynamics, providing a novel coherence-driven resolution to the persistent cosmological Hubble tension between local and distant measurements.
 
 ---
 
 ## 📚 Project Structure
 
-- `main.tex`: Main LaTeX file compiling the full paper.
-- `/sections/`: Organized `.tex` files for each major section (introduction, phase derivation, application, etc.).
-- `/appendix/`: Supplementary LaTeX appendices (framework diagrams, derivations, code overview).
-- `/figures/`: All generated figure files (PDF, PNG) for the paper.
-- `/python/`: Python scripts and Jupyter notebooks for figure generation and ripple modeling.
-- `/bib/`: Bibliography files for citation management.
+```
+GENESIS-FIELD-PAPER1-PHASE-MODULATION/
+├── paper/
+│   ├── genesis_field_paper.pdf         # Final compiled manuscript
+│   ├── main.tex                        # Main LaTeX file
+│   ├── sections/                       # Individual section files (.tex)
+│   ├── appendix/                       # Supplemental appendix files
+│   ├── figures/                        # All manuscript figures (PDF, EPS)
+│   ├── handwritten_notes/              # Original handwritten derivations
+│   │   └── derivation_notes.pdf
+│   └── bib/                            # Bibliography files (.bib)
+│
+├── python/
+│   ├── requirements.txt                # Python dependencies
+│   ├── fig_2_ripple_modulation_plot.py
+│   ├── fig_3_global_phase_modulation_plot.py
+│   ├── fig_5_genesisfield_model_fit_hz.py
+│   ├── fig_6_hz_residuals_comparison.py
+│   ├── fig_7_genesisfield_qz.py
+│   ├── fig_8_parameter_sensitivity_plot.py
+│   ├── fig_9_genesis_field_ripple_vs_lcdm_projection.py
+│   └── fig_10_gamma_sensitivity_plot.py
+│
+├── LICENSE                             # Project license (CC BY 4.0)
+└── README.md                           # Project overview
+```
 
 ---
 
 ## 🚀 Workflow
 
-- All LaTeX editing and compiling is performed through Overleaf (connected to this GitHub repository).
-- All figures are generated using Python (VS Code or Google Colab), saved locally, and version-controlled via GitHub.
-- This repository provides full version control, backup, and reproducibility for scientific transparency.
+* **LaTeX Editing:** Manuscript editing and compilation via [Overleaf](https://overleaf.com), synchronized to this repository.
+* **Figure Generation:** Python scripts (tested in VS Code and Google Colab) produce figures for publication. All scripts and resulting figures are version-controlled.
+* **Version Control:** Complete project versioning provided by GitHub ensures reproducibility and transparency.
 
 ---
 
-## 👤 Author
+## 💻 Python Dependencies
 
-**R.V. Greene**  
-Genesis Field Theory Series (2025)
+Install required Python libraries using:
+
+```bash
+pip install -r python/requirements.txt
+```
+
+The scripts utilize the following key dependencies:
+
+* `numpy==1.26.4`
+* `scipy==1.13.0`
+* `matplotlib==3.8.4`
+
+---
+
+## 🧑‍💻 Author
+
+**Richard V. Greene**
+Independent Researcher
+[richvgreene@gmail.com](mailto:richvgreene@gmail.com)
 
 ---
 
 ## 📜 License
 
-This work is licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0).**
+This work is licensed under the **Creative Commons Attribution 4.0 International License (CC BY 4.0)**.
 
 You are free to:
 
-- **Share** — copy and redistribute the material in any medium or format.
-- **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
+* **Share** — copy and redistribute the material in any medium or format.
+* **Adapt** — remix, transform, and build upon the material for any purpose, even commercially.
 
 Under the following terms:
 
-- **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
-- **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
+* **Attribution** — You must give appropriate credit, provide a link to the license, and indicate if changes were made.
+* **No additional restrictions** — You may not apply legal terms or technological measures that legally restrict others from doing anything the license permits.
 
 > [View License](https://creativecommons.org/licenses/by/4.0/)
 
 ---
+
+🔗 **Associated Manuscript:** [Genesis Field: Phase Modulation and the Hubble Tension (PDF)](paper/genesis_field_paper.pdf)
+
+🔗 **GitHub Repository:** [https://github.com/mrrgreene/genesis-field-paper1-phase-modulation](https://github.com/mrrgreene/genesis-field-paper1-phase-modulation)
