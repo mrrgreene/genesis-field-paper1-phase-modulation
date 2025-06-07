@@ -1,0 +1,32 @@
+Richard Greene  
+Independent Researcher  
+CPA, MBA, MS Accountancy, BS Finance, BS Economics  
+Arizona State University, Tempe, AZ, USA  
+ORCID: https://orcid.org/0009-0002-2430-8184  
+Email: richvgreene@gmail.com  
+
+[Date: 2025/06/07]
+
+Editors  
+Physical Review D  
+American Physical Society  
+
+Dear Editors,
+
+I am pleased to submit the manuscript titled *“Quantum Pressure and Phase Modulation in the Genesis Field: Resolving Cosmic Acceleration and Hubble Oscillations”* for your consideration for publication in *Physical Review D*, under the section “Cosmology, Gravitation, and Field Theory.”
+
+This paper introduces the **Genesis Field**, a first-principles cosmological model in which late-time cosmic acceleration arises from vacuum coherence effects—specifically, quantum pressure and global phase modulation. Derived from a covariant extension of the Gross–Pitaevskii equation, the model predicts ripple-like oscillations in the Hubble parameter \( H(z) \) without invoking new scalar fields or modifying gravity.
+
+We benchmark the theory against the Pantheon+ Type Ia supernova sample and cosmic chronometer \( H(z) \) data, demonstrating improved residual structure, reduced \(\chi^2\), and predictive restraint under joint constraints. The ripple features, while not yet statistically required, align with known residuals and are sharply testable by upcoming high-precision surveys including Euclid, JWST, and Rubin. Notably, the model reduces exactly to \(\Lambda\)CDM in the suppressed limit and is falsifiable under a well-defined set of observational criteria.
+
+The manuscript includes fully transparent derivations, an operational glossary, and open-source code for all figures and MCMC fits. It is the first in a five-paper research program that investigates spacetime, matter, time, and constants as emergent coherence phenomena.
+
+To the best of my knowledge, this work presents the first cosmological theory to derive testable late-time acceleration signatures from global vacuum phase dynamics grounded in laboratory-scale quantum fluid analogs. I confirm that the manuscript is original, unpublished, and not under consideration elsewhere.
+
+Thank you for your time and thoughtful review. I look forward to the referee evaluation.
+
+Sincerely,  
+Richard Greene  
+Email: richvgreene@gmail.com  
+ORCID: https://orcid.org/0009-0002-2430-8184  
+GitHub: https://github.com/mrrgreene/genesis-field-paper1-phase-modulation
