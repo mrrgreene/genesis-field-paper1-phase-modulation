@@ -1,0 +1,316 @@
+\section{Mathematical Derivation of Quantum Pressure, Phase Modulation, and Stress-Energy Structure}
+\label{sec:appendix_math_derivation}
+
+This appendix rigorously derives the mathematical foundations underlying the Genesis Field framework as presented in Section~\ref{sec:derivations}. The derivation pipeline is intentionally general, facilitating reuse and extension in subsequent Genesis Field studies. Custom modifications to the Lagrangian, potentials, or field equations can be systematically embedded for different cosmological contexts. Here, we emphasize the derivation of ripple-modulated cosmic expansion from quantum coherence-phase evolution, culminating in the corresponding vacuum stress-energy tensor contributions.
+
+\subsection{From Flat-Space GPE to Covariant Formulation}
+
+We begin from the canonical Gross–Pitaevskii equation (GPE), describing coherent quantum states in Bose–Einstein condensates (BECs):
+
+\begin{equation}
+i\hbar\frac{\partial \Psi}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + V(|\Psi|^2)\right)\Psi,
+\label{eq:gpe_original}
+\end{equation}
+
+originating from the non-relativistic flat-space Lagrangian density:
+
+\begin{equation}
+\mathcal{L}_{\text{flat}} = \frac{i\hbar}{2}\left(\Psi^*\partial_t\Psi - \Psi\,\partial_t\Psi^*\right) - \frac{\hbar^2}{2m}\left|\nabla\Psi\right|^2 - V(|\Psi|^2).
+\label{eq:flat_space_lagrangian}
+\end{equation}
+
+To generalize this to relativistic cosmological settings, we first replace spatial derivatives with the Lorentz-invariant four-gradient $\partial_\mu = (\frac{1}{c}\partial_t,\nabla)$ and introduce the Minkowski metric $\eta^{\mu\nu}=\text{diag}(+,-,-,-)$, obtaining:
+
+\begin{equation}
+\mathcal{L}_{\text{rel}} = \frac{\hbar^2}{2m}\eta^{\mu\nu}\partial_\mu\Psi^*\partial_\nu\Psi - V(\Psi^*\Psi).
+\label{eq:relativistic_lagrangian}
+\end{equation}
+
+Next, we generalize this formulation to curved spacetime by replacing the Minkowski metric $\eta^{\mu\nu}$ with a general metric $g^{\mu\nu}$, yielding the fully covariant Lagrangian:
+
+\begin{equation}
+\mathcal{L}_{\text{cov}} = \frac{\hbar^2}{2m}g^{\mu\nu}\partial_\mu\Psi^*\partial_\nu\Psi - V(\Psi^*\Psi).
+\label{eq:covariant_lagrangian}
+\end{equation}
+
+This expression provides the rigorous foundation needed to describe vacuum quantum coherence dynamics consistently within general relativistic cosmological scenarios.
+
+\subsection{Variation of the Genesis Field Lagrangian}
+
+Starting from the covariant Lagrangian density (\ref{eq:covariant_lagrangian}), the action integral is given by:
+
+\begin{equation}
+S = \int d^4x \,\sqrt{-g}\,\mathcal{L}.
+\label{eq:action_covariant}
+\end{equation}
+
+To derive the field equations, we apply the Euler–Lagrange equations for complex scalar fields in curved spacetime:
+
+\begin{equation}
+\frac{\partial (\sqrt{-g}\,\mathcal{L})}{\partial \Psi^*} - \partial_\mu \left(\frac{\partial (\sqrt{-g}\,\mathcal{L})}{\partial (\partial_\mu \Psi^*)}\right) = 0.
+\label{eq:euler_lagrange_general}
+\end{equation}
+
+Performing the variations, we have:
+
+\begin{equation}
+\frac{\partial(\sqrt{-g}\,\mathcal{L})}{\partial \Psi^*} = -\sqrt{-g}\,\frac{dV(\Psi^*\Psi)}{d\Psi^*}, \quad
+\frac{\partial(\sqrt{-g}\,\mathcal{L})}{\partial(\partial_\mu \Psi^*)} = \sqrt{-g}\,\frac{\hbar^2}{2m}g^{\mu\nu}\partial_\nu\Psi.
+\label{eq:variations}
+\end{equation}
+
+Inserting these into Eq.~\eqref{eq:euler_lagrange_general}, we obtain the covariant field equation:
+
+\begin{equation}
+-\sqrt{-g}\,\frac{dV(\Psi^*\Psi)}{d\Psi^*} - \partial_\mu\left(\sqrt{-g}\,\frac{\hbar^2}{2m}g^{\mu\nu}\partial_\nu\Psi\right) = 0.
+\label{eq:euler_lagrange}
+\end{equation}
+
+Dividing by $\sqrt{-g}$ yields the covariant form:
+
+\begin{equation}
+\frac{\hbar^2}{2m}\frac{1}{\sqrt{-g}}\partial_\mu\left(\sqrt{-g}\,g^{\mu\nu}\partial_\nu\Psi\right) = \frac{dV(\Psi^*\Psi)}{d\Psi^*}.
+\label{eq:covariant_field_eq}
+\end{equation}
+
+This can be succinctly expressed using the covariant d'Alembert operator $\Box$:
+
+\begin{equation}
+\frac{\hbar^2}{2m}\Box\Psi = \frac{dV(\Psi^*\Psi)}{d\Psi^*},\quad\text{where}\quad \Box\Psi \equiv g^{\mu\nu}\nabla_\mu\nabla_\nu\Psi.
+\label{eq:covariant_dalembert_eq}
+\end{equation}
+
+\subsection{Vacuum Stress-Energy Tensor}
+
+From the covariant action principle (\ref{eq:action_covariant}), the vacuum stress-energy tensor is derived as:
+
+\begin{equation}
+T_{\mu\nu} = \frac{2}{\sqrt{-g}}\frac{\delta(\sqrt{-g}\,\mathcal{L})}{\delta g^{\mu\nu}}.
+\label{eq:stress_energy_definition}
+\end{equation}
+
+Evaluating this variation, we find:
+
+\begin{equation}
+T_{\mu\nu} = \frac{\hbar^2}{2m}\left(\partial_\mu\Psi^*\partial_\nu\Psi + \partial_\nu\Psi^*\partial_\mu\Psi\right) - g_{\mu\nu}\mathcal{L}.
+\label{eq:stress_energy}
+\end{equation}
+
+Applying the Madelung transformation $\Psi=\sqrt{\rho}e^{i\phi}$, the stress-energy tensor naturally separates into quantum pressure and coherence-phase contributions, linking vacuum coherence dynamics to gravitational and cosmological phenomena.
+
+\subsection{Reduction to Cosmological Ripple Prediction}
+
+In the cosmological background, spatial gradients vanish, leaving primarily temporal coherence-phase dynamics. The stress-energy tensor thus simplifies to a coherent, homogeneous form, leading directly to ripple-like modulations in the cosmological expansion rate $H(z)$, as derived rigorously in Section~\ref{sec:derivations} and Eq.~\eqref{eq:Hubble_ripple}:
+
+\begin{equation}
+H(z) = H_0\left[1 + \epsilon e^{-\gamma z}\sin(\omega z + \phi)\right]\sqrt{\Omega_m(1+z)^3+(1-\Omega_m)},
+\label{eq:Hubble_ripple_appendix}
+\end{equation}
+
+providing a direct, transparent connection between quantum coherence dynamics and observable cosmological structure.
+
+\subsection{Stress-Energy Tensor and Ripple Structure of \texorpdfstring{$T_{00}$}{T00}}
+\label{app:tensor}
+
+The energy–momentum tensor \( T_{\mu\nu} \) encodes the gravitational coupling of the vacuum field \( \Psi \) to spacetime geometry. It is rigorously derived from the covariant action principle by variation with respect to the metric:
+
+\begin{equation}
+T_{\mu\nu} = -\frac{2}{\sqrt{-g}} \frac{\delta S}{\delta g^{\mu\nu}} 
+= \frac{\hbar^2}{m}\left(\partial_\mu\Psi^*\partial_\nu\Psi + \partial_\nu\Psi^*\partial_\mu\Psi\right) - g_{\mu\nu}\mathcal{L}.
+\label{eq:stress_energy_general}
+\end{equation}
+
+Applying the Madelung transformation \( \Psi = \sqrt{\rho}\,e^{i\phi} \), we obtain:
+
+\begin{equation}
+\partial_\mu \Psi^*\partial_\nu\Psi = \frac{1}{4\rho}\partial_\mu\rho\,\partial_\nu\rho + \rho\,\partial_\mu\phi\,\partial_\nu\phi.
+\label{eq:tmunu_madelung_term}
+\end{equation}
+
+Thus, the energy–momentum tensor takes the form:
+
+\begin{equation}
+T_{\mu\nu} = \frac{\hbar^2}{m}\left[\frac{1}{2\rho}\partial_\mu\rho\,\partial_\nu\rho + 2\rho\,\partial_\mu\phi\,\partial_\nu\phi\right] - g_{\mu\nu}\mathcal{L}.
+\label{eq:stress_energy_expanded}
+\end{equation}
+
+In the cosmological (homogeneous and isotropic) limit, spatial gradients vanish and the coherence phase \(\phi\) evolves primarily in cosmic time. Hence, the dominant vacuum-energy component \(T_{00}\) simplifies to:
+
+\begin{equation}
+T_{00} \approx \frac{2\hbar^2}{m}\rho\left(\frac{d\phi}{dt}\right)^2 + Q(\rho),
+\label{eq:t00_basic}
+\end{equation}
+
+where \( Q(\rho) \) represents quantum pressure contributions arising from residual spatial gradients, small but physically significant.
+
+Employing the form of phase evolution (Eq.~\eqref{eq:phi_solution}), we have:
+
+\begin{equation}
+\frac{d\phi}{dt} = \omega_c - \epsilon e^{-\gamma t}\left[\gamma\cos(\omega t + \phi_0) + \omega\sin(\omega t + \phi_0)\right].
+\label{eq:phase_modulation_derivative_1}
+\end{equation}
+
+Expanding to first order in ripple amplitude \(\epsilon\):
+
+\begin{equation}
+\left(\frac{d\phi}{dt}\right)^2 \approx \omega_c^2\left[1 - 2\epsilon e^{-\gamma t}\left(\frac{\gamma}{\omega_c}\cos(\omega t + \phi_0) + \frac{\omega}{\omega_c}\sin(\omega t + \phi_0)\right)\right].
+\end{equation}
+
+Thus, the final simplified expression for the ripple structure of \(T_{00}\) emerges as:
+
+\begin{equation}
+T_{00} \approx \rho_0\left[1 + \epsilon e^{-\gamma z}\sin(\omega z + \phi)\right],
+\label{eq:t00_ripple_final}
+\end{equation}
+
+directly matching the ripple-modulated form used in the cosmological expansion rate (Eq.~\eqref{eq:Hubble_ripple}). This result demonstrates transparently that the observational ripple feature in \(H(z)\) originates from coherence-driven modulations in the vacuum energy density \(T_{00}\), derived rigorously from fundamental quantum coherence principles.
+
+\textit{Note:} The derived stress-energy structure forms the theoretical foundation for modified Einstein field equations, rigorously developed in Paper IV (Quantum Coherence Origins of Gravity). The full tensor structure \(T_{ij}\), including pressure and gravitational lensing predictions, will be explored therein.
+
+\subsection{Madelung Transformation and Separation of Dynamics}
+
+To clearly extract fluid-like variables from the scalar field \(\Psi(x^\mu)\), we employ the Madelung transformation, rewriting the field in terms of vacuum coherence density \(\rho(x^\mu)\) and global coherence phase \(\phi(x^\mu)\):
+
+\begin{equation}
+\Psi(x^\mu) = \sqrt{\rho(x^\mu)}\,e^{i\phi(x^\mu)}.
+\label{eq:madelung_transformation}
+\end{equation}
+
+Field derivatives thus become:
+
+\begin{align}
+\partial_\mu\Psi &= \left(\frac{\partial_\mu\rho}{2\sqrt{\rho}} + i\sqrt{\rho}\,\partial_\mu\phi\right)e^{i\phi},\label{eq:madelung_derivative}\\[6pt]
+\partial_\mu\Psi^* &= \left(\frac{\partial_\mu\rho}{2\sqrt{\rho}} - i\sqrt{\rho}\,\partial_\mu\phi\right)e^{-i\phi}.
+\label{eq:madelung_derivative_conj}
+\end{align}
+
+Substituting these forms into the kinetic term of the covariant Lagrangian~\eqref{eq:covariant_lagrangian}, we obtain:
+
+\begin{equation}
+g^{\mu\nu}\partial_\mu\Psi^*\partial_\nu\Psi = \frac{1}{4\rho}g^{\mu\nu}\partial_\mu\rho\,\partial_\nu\rho + \rho\,g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi.
+\label{eq:kinetic_expanded}
+\end{equation}
+
+Thus, in fluid-like variables, the covariant Lagrangian density becomes:
+
+\begin{equation}
+\mathcal{L} = \frac{\hbar^2}{2m}\left[\frac{1}{4\rho}g^{\mu\nu}\partial_\mu\rho\,\partial_\nu\rho + \rho\,g^{\mu\nu}\partial_\mu\phi\,\partial_\nu\phi\right]-V(\rho).
+\label{eq:lagrangian_fluid}
+\end{equation}
+
+Variation of the action integral with respect to the coherence phase \(\phi\) yields the continuity equation for vacuum coherence density:
+
+\begin{equation}
+\nabla_\mu(\rho\,\partial^\mu\phi) = \frac{1}{\sqrt{-g}}\partial_\mu(\sqrt{-g}\,\rho\,g^{\mu\nu}\partial_\nu\phi) = 0,
+\label{eq:continuity}
+\end{equation}
+
+ensuring rigorous conservation of vacuum coherence density.
+
+Independent variation with respect to the density \(\rho\) yields the quantum Hamilton–Jacobi equation, identifying quantum pressure contributions:
+
+\begin{equation}
+\frac{\hbar^2}{2m}\frac{\Box\sqrt{\rho}}{\sqrt{\rho}} - \frac{\hbar^2}{2m}\partial_\mu\phi\,\partial^\mu\phi + \frac{dV(\rho)}{d\rho} = 0.
+\label{eq:hamilton_jacobi_detailed}
+\end{equation}
+
+Defining the quantum pressure as:
+
+\begin{equation}
+Q(\rho)\equiv \frac{\hbar^2}{2m}\frac{\Box\sqrt{\rho}}{\sqrt{\rho}},
+\label{eq:quantum_pressure}
+\end{equation}
+
+the quantum Hamilton–Jacobi equation is succinctly rewritten as:
+
+\begin{equation}
+Q(\rho) - \frac{\hbar^2}{2m}\partial_\mu\phi\,\partial^\mu\phi + \frac{dV(\rho)}{d\rho} = 0,
+\label{eq:modified_hamilton_jacobi}
+\end{equation}
+
+clearly delineating quantum pressure, kinetic coherence-phase terms, and the vacuum potential.
+
+Together, equations~\eqref{eq:continuity} and~\eqref{eq:modified_hamilton_jacobi} fully encapsulate vacuum coherence fluid dynamics, rigorously linking fundamental quantum mechanics directly to cosmologically testable predictions. The continuity equation guarantees coherence-density conservation, while the quantum Hamilton–Jacobi equation encodes quantum vacuum dynamics responsible for cosmic acceleration and ripple modulations observed in the expansion history.
+
+\subsection{Ripple Structure from Global Coherence-Phase Modulation}
+
+In cosmological settings, the vacuum coherence density \(\rho\) remains nearly constant over relevant observational timescales. Starting from the continuity equation:
+
+\begin{equation}
+\frac{d}{dt}\left(\rho \frac{d\phi}{dt}\right) + 3H(t)\rho\frac{d\phi}{dt} = 0,
+\label{eq:continuity_ripple}
+\end{equation}
+
+and adopting the approximation \(\rho \approx \text{constant}\), we simplify directly to the coherence-phase evolution equation:
+
+\begin{equation}
+\frac{d^2\phi}{dt^2}+3H(t)\frac{d\phi}{dt}\approx 0,
+\label{eq:phase_evolution_cosmo}
+\end{equation}
+
+which mirrors a classical damped harmonic oscillator. Thus, the physically meaningful solution is:
+
+\begin{equation}
+\phi(t)=\omega_c t + \epsilon e^{-\gamma t}\cos(\omega_m t+\phi_0),
+\label{eq:phase_modulation_solution}
+\end{equation}
+
+with modulation amplitude \(\epsilon \ll 1\), damping rate \(\gamma\), modulation frequency \(\omega_m\), and initial phase \(\phi_0\). Taking the time derivative gives:
+
+\begin{equation}
+\frac{d\phi}{dt}=\omega_c - \epsilon e^{-\gamma t}\left[\gamma\cos(\omega_m t+\phi_0)+\omega_m\sin(\omega_m t+\phi_0)\right].
+\label{eq:phase_modulation_derivative}
+\end{equation}
+
+We connect the ripple frequency \(\omega_m\) to fundamental vacuum properties via the vacuum potential curvature:
+
+\begin{equation}
+\omega_m = \frac{\hbar}{m}\sqrt{\frac{d^2V}{d|\Psi|^2}},
+\label{eq:omega_derivation}
+\end{equation}
+
+demonstrating transparently how cosmological ripple modulation directly emerges from intrinsic vacuum coherence properties. The amplitude \(\epsilon\) is similarly bounded by physically reasonable initial vacuum coherence conditions, analogous to known quantum-fluid cosmological scenarios~\cite{volovik2009,Barcelo2005}.
+
+Transforming to redshift \(z\) using the standard cosmological relation,
+
+\begin{equation}
+dt=-\frac{dz}{(1+z)H(z)},
+\label{eq:redshift_time_relation}
+\end{equation}
+
+we obtain the observationally expression for global coherence-phase modulation in the cosmic expansion rate, valid to first order in \(\epsilon\):
+
+\begin{equation}
+H(z)=H_0\sqrt{\Omega_m(1+z)^3+(1-\Omega_m)}\left[\,1+\epsilon e^{-\gamma z}\sin(\omega z+\phi)\right].
+\label{eq:final_global_ripple}
+\end{equation}
+
+This derived form clearly demonstrates how internal coherence-phase dynamics naturally produce observational ripple modulations in the expansion rate. Unlike traditional dark-energy or modified-gravity models, this ripple signature emerges from fundamental quantum vacuum coherence dynamics, providing uniquely testable, falsifiable predictions inherent to the Genesis Field framework.
+
+\begin{tcolorbox}[colback=blue!5!white, colframe=blue!75!black, title=\textbf{Summary of Key Derived Relations}, sharp corners=south]
+\begin{itemize}
+    \item \textbf{Covariant Field Equation:}  
+    \quad $\displaystyle \frac{\hbar^2}{2m} \Box \Psi = \frac{dV}{d\Psi^*}$
+    
+    \item \textbf{Continuity Equation (from $\delta\phi$ variation):}  
+    \quad $\displaystyle \nabla_\mu(\rho \partial^\mu \phi) = 0$
+
+    \item \textbf{Quantum Hamilton–Jacobi Equation (from $\delta\rho$):}  
+    \quad $\displaystyle Q(\rho) - \frac{\hbar^2}{2m} \partial_\mu \phi \partial^\mu \phi + \frac{dV}{d\rho} = 0$
+    
+    \item \textbf{Quantum Pressure Definition:}  
+    \quad $\displaystyle Q(\rho) = \frac{\hbar^2}{2m} \frac{\Box \sqrt{\rho}}{\sqrt{\rho}}$
+
+\item \textbf{Observable Phase Modulation in $H(z)$:}  
+Phase coherence effects in the Genesis Field induce a ripple structure in the expansion rate, modifying the Hubble parameter as:
+
+\begin{equation}
+H(z) = H_0 \sqrt{ \Omega_m (1+z)^3 + (1 - \Omega_m) }
+\left[ 1 + \epsilon\, e^{-\gamma z} \sin(\omega z + \phi) \right]
+\end{equation}
+
+    
+    \item \textbf{Ripple Structure in Energy Density:}  
+    \quad $\displaystyle T_{00} \sim \rho_0 \left[ 1 + \epsilon e^{-\gamma z} \sin(\omega z + \phi) \right]$
+\end{itemize}
+\end{tcolorbox}

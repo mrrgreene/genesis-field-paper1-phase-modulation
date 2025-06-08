@@ -1,0 +1,141 @@
+\documentclass[aps,prd,preprint,12pt,superscriptaddress,nofootinbib]{revtex4-2}
+
+% --- Packages ---
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{adjustbox}
+\usepackage{graphicx}
+\usepackage{url}
+\usepackage{chngcntr}
+\usepackage{booktabs}
+\usepackage[table]{xcolor}
+\usepackage{ragged2e}
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows.meta, shapes, calc}
+\usepackage[most]{tcolorbox}
+\usepackage{amsmath, amssymb, amsfonts}
+\usepackage{physics}
+\usepackage{graphicx}
+\usepackage{bm}
+\usepackage{orcidlink}
+\usepackage{setspace}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=false,
+    pdfborder={0 0 0}
+}
+
+% Set global figure scaling rules
+\setkeys{Gin}{width=\linewidth, keepaspectratio}
+
+
+% Tweak default figure placement to avoid floating too much
+\renewcommand{\topfraction}{0.9}
+\renewcommand{\bottomfraction}{0.8}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.8}
+
+% Add dotted leaders (dots) back to the ToC neatly
+\makeatletter
+\renewcommand{\l@section}[2]{%
+  \addpenalty{\@secpenalty}%
+  \addvspace{1.0em plus\p@}%
+  \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \parfillskip -\@pnumwidth
+    \leavevmode \bfseries
+    \advance\leftskip 2.0em % Adjust indentation carefully here
+    \hskip -\leftskip
+    #1\nobreak\leaders\hbox to .6em{\hss.\hss}\hfill\nobreak\hb@xt@\@pnumwidth{\hfil #2}\par
+  \endgroup
+}
+\renewcommand{\l@subsection}[2]{%
+  \addpenalty{\@secpenalty}%
+  \addvspace{0.5em plus\p@}%
+  \begingroup
+    \parindent \z@ \rightskip \@pnumwidth
+    \parfillskip -\@pnumwidth
+    \leavevmode
+    \advance\leftskip 4.0em % Adjust indentation carefully here
+    \hskip -\leftskip
+    #1\nobreak\leaders\hbox to .6em{\hss.\hss}\hfill\nobreak\hb@xt@\@pnumwidth{\hfil #2}\par
+  \endgroup
+}
+\makeatother
+
+\sloppy
+
+% --- Document Starts ---
+\begin{document}
+
+% --- Title and authors ---
+\title{\texorpdfstring{
+\textbf{Quantum Pressure and Phase Modulation in the Genesis Field: Resolving Cosmic Acceleration and Hubble Oscillations} \\
+\normalsize Preprint Version 1.0
+}{The Genesis Field: Phase Modulation and the Hubble Tension}}
+
+\author{Richard Greene\,\orcidlink{0009-0002-2430-8184}}
+\thanks{Corresponding author. Email: \href{mailto:richvgreene@gmail.com}{richvgreene@gmail.com}}
+\affiliation{\setstretch{0.9}
+Independent Researcher \\ 
+CPA, MBA, MS Accountancy, BS Finance, BS Economics \\ 
+Arizona State University, Tempe, AZ, USA
+}
+\date{2025/05/17}
+
+% --- Abstract ---
+\begin{abstract}
+\noindent
+\justifying
+We introduce the Genesis Field, a coherence-based cosmological framework that models spacetime as a quantum-condensed medium, wherein global phase dynamics drive late-time acceleration. Derived from first principles using a covariant extension of the Gross–Pitaevskii equation, the theory improves upon $\Lambda$CDM fits to late-time observables, yielding $\chi^2_\nu = 0.512$ and $R^2 = 0.939$ on cosmic chronometer data. It predicts ripple-like modulations in the Hubble parameter \( H(z) \), emerging from vacuum-phase oscillations governed by internal stiffness and coherence decay. These ripple features are consistent with residual patterns in current datasets, though not yet statistically required. The model's hallmark prediction—percent-level oscillations in \( H(z) \) at redshifts \( 0.5 < z < 2.0 \)—is imminently testable by Euclid, JWST, and the Rubin Observatory, offering a clear falsifiability benchmark. This paper derives the core mechanisms of quantum pressure and coherence-phase modulation, evaluates them against supernova and $H(z)$ data, and demonstrates empirical viability. Broader implications—such as gravity, time, and matter emerging from quantum coherence—are delineated as testable extensions in future work.
+\end{abstract}
+
+\maketitle
+\clearpage
+\tableofcontents
+\clearpage
+
+\input{sections/section1_intro}
+
+\input{sections/section2_field_framework}
+
+\input{sections/section3_derivations}
+
+\input{sections/section4_observations}
+
+\input{sections/section5_predictions}
+
+\input{sections/section6_conclusion}
+
+\makeatletter
+\renewcommand\appendix{
+  \par
+  \setcounter{section}{0}
+  \setcounter{subsection}{0}
+  \gdef\thesection{\Alph{section}}
+  \gdef\thesubsection{\Alph{section}.\arabic{subsection}}
+  \def\@seccntformat##1{\csname the##1\endcsname\quad}
+}
+\makeatother
+
+\appendix
+
+\input{appendix/appendix_a_derivations}
+\input{appendix/appendix_b_glossary}
+\input{appendix/appendix_c_code}
+
+% ---- References ----
+\clearpage
+\bibliographystyle{apsrev4-2}
+\bibliography{bib/genesis_field_refs}
+
+\end{document}
+
+
+% ---- Figure Example ----
+\begin{figure}[ht!]
+    \centering
+    \includegraphics[width=0.8\linewidth]{figures/hubble_ripple_plot.pdf}
+    \caption{Predicted ripple in the Hubble parameter $H(z)$ from phase modulation. Overlaid with observational data.}
+    \label{fig:hubble_ripple}
+\end{figure}

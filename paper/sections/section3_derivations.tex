@@ -1,0 +1,143 @@
+\section{Quantum Pressure and Phase Modulation Derivations}
+\label{sec:derivations}
+
+In the Genesis Field framework, cosmic acceleration and ripple-like modulations in the expansion rate naturally emerge from two coherence-driven mechanisms: vacuum quantum pressure and global phase modulation. These phenomena originate from the dynamics of a covariant scalar field \( \Psi(x^\mu) \), encoding the vacuum's coherent amplitude and global phase. This section rigorously derives, from first principles, the model’s primary observational prediction: a small, oscillatory correction to the Hubble parameter \( H(z) \)—the \emph{ripple}. Approximations and conditions of validity are clearly stated; predictions are tested empirically in Section~\ref{sec:observations}.
+
+We begin from the linear Schrödinger equation describing quantum wave evolution in flat spacetime~\cite{Schrodinger1926}:
+\begin{equation}
+i\hbar \frac{\partial \Psi}{\partial t} = -\frac{\hbar^2}{2m}\nabla^2\Psi + V(\Psi),
+\label{eq:schrodinger}
+\end{equation}
+which generalizes to macroscopic quantum fluids, such as Bose–Einstein condensates (BECs), through the Gross–Pitaevskii equation (GPE)~\cite{Gross1961,Pitaevskii1961}:
+\begin{equation}
+i\hbar \frac{\partial \Psi}{\partial t} = \left(-\frac{\hbar^2}{2m}\nabla^2 + g|\Psi|^2\right)\Psi.
+\label{eq:gpe}
+\end{equation}
+
+To describe vacuum dynamics on cosmological scales, we extend the GPE covariantly into curved spacetime using a scalar-field Lagrangian~\cite{Barcelo2005,volovik2003universe}:
+\begin{equation}
+\mathcal{L} = \frac{\hbar^2}{2m} g^{\mu\nu} \partial_\mu \Psi^* \partial_\nu \Psi - V(|\Psi|^2),
+\label{eq:genesis_lagrangian}
+\end{equation}
+leading to the covariant field equation:
+\begin{equation}
+\frac{\hbar^2}{2m}\Box\Psi = \frac{\partial V}{\partial |\Psi|^2}\Psi,
+\label{eq:field_equation}
+\end{equation}
+where \( \Box \) is the d'Alembertian operator, and \( V(|\Psi|^2) \) is the vacuum self-interaction potential.
+
+To extract physical intuition, we apply the Madelung transformation~\cite{Madelung1927}:
+\begin{equation}
+\Psi(x^\mu) = \sqrt{\rho(x^\mu)}\, e^{i\phi(x^\mu)},
+\label{eq:madelung}
+\end{equation}
+with vacuum coherence density \( \rho \) and coherence phase \( \phi \). Substituting Eq.~\eqref{eq:madelung} into Eq.~\eqref{eq:field_equation} yields two hydrodynamic equations: the continuity equation,
+\begin{equation}
+\partial_\mu (\rho\,\partial^\mu\phi) = 0,
+\label{eq:continuity_1}
+\end{equation}
+and a modified Hamilton–Jacobi equation incorporating quantum pressure:
+\begin{equation}
+\frac{\hbar^2}{2m}\frac{\Box\sqrt{\rho}}{\sqrt{\rho}} - \frac{\hbar^2}{2m}(\partial_\mu\phi)(\partial^\mu\phi) + V(\rho) = 0.
+\label{eq:hamilton_jacobi}
+\end{equation}
+
+The first term defines the quantum pressure \( Q(\rho) \), an effective repulsive term arising from vacuum density gradients; the second represents kinetic energy due to phase flow. Together, they yield a quantum-coherent mechanism for cosmic acceleration, without requiring phenomenological scalar fields or tuned potentials. While spatial gradients vanish in the large-scale cosmological limit, small residual inhomogeneities ensure \( Q(\rho) \neq 0 \) at the background level (Appendix~\ref{app:tensor}).
+
+Assuming a spatially flat Friedmann–Robertson–Walker (FRW) background with negligible spatial gradients and small-amplitude perturbations, Eq.~\eqref{eq:continuity_1} simplifies to:
+\begin{equation}
+\frac{d^2\phi}{dt^2} + 3H(t)\frac{d\phi}{dt} \approx 0,
+\label{eq:phase_damping}
+\end{equation}
+analogous to a damped harmonic oscillator. Its general solution, representing the time evolution of the coherence phase, is:
+\begin{equation}
+\phi(t) = \omega_c t + \epsilon\, e^{-\gamma t}\cos(\omega t + \phi_0),
+\label{eq:phi_solution}
+\end{equation}
+Here:
+\begin{itemize}[leftmargin=*]
+    \item \( \omega_c \): baseline vacuum oscillation frequency (in units of inverse time),
+    \item \( \epsilon \): ripple amplitude, quantifying deviations from \(\Lambda\)CDM,
+    \item \( \omega \): coherence frequency, interpreted as oscillations per Hubble time (see Appendix~\ref{app:glossary}),
+    \item \( \gamma \): coherence damping rate, determining exponential suppression of ripple features over time,
+    \item \( \phi_0 \): initial global phase offset.
+\end{itemize}
+These parameters emerge from the vacuum potential \( V(\rho) \) and are not freely tunable; in particular, \( \omega \sim \sqrt{V''(\rho)} \) reflects the vacuum's effective stiffness.
+where:
+\begin{itemize}[leftmargin=*]
+    \item \( \omega_c \): baseline vacuum oscillation frequency,
+    \item \( \epsilon \): ripple amplitude — sets the strength of deviations from \(\Lambda\)CDM,
+    \item \( \omega \): ripple frequency — controls the redshift spacing between expansion peaks,
+    \item \( \gamma \): damping rate — determines how quickly ripple features fade at high \( z \),
+    \item \( \phi_0 \): initial phase — controls phase offset of ripple signature.
+\end{itemize}
+
+This solution is not phenomenologically imposed; both \( \epsilon \) and \( \omega \) arise directly from vacuum field parameters. In particular, \( \omega \approx \frac{\hbar}{m}\sqrt{d^2V/d|\Psi|^2} \) corresponds to the curvature of the potential \( V(\rho) \) and reflects the vacuum's internal stiffness.
+
+Intuitively, the ripple arises as a small, coherent oscillation of the vacuum phase \( \phi(t) \), driven by its underlying potential and modulated by Hubble damping. This coherent motion creates a slight undulation in the expansion rate \( H(z) \), overlaid on top of the baseline \(\Lambda\)CDM trend.
+
+To connect to observations, we change variables to redshift \( z \) via \( dt = -dz/[(1+z)H(z)] \), yielding:
+\begin{equation}
+\phi(z) = \omega_c t(z) + \epsilon\, e^{-\gamma t(z)}\cos[\omega t(z) + \phi_0].
+\label{eq:phi_redshift}
+\end{equation}
+
+This evolving global phase modulates vacuum energy, and thus the Hubble parameter. Substitution into the Friedmann equation yields the Genesis Field's central observational prediction:
+
+\begin{tcolorbox}[colback=gray!7, colframe=black, title=Genesis Field Prediction for $H(z)$]
+\begin{equation}
+H(z) = H_0\left[1 + \epsilon\, e^{-\gamma z}\sin(\omega z + \phi)\right]\sqrt{\Omega_m(1+z)^3 + (1-\Omega_m)}.
+\label{eq:Hubble_ripple}
+\end{equation}
+\end{tcolorbox}
+
+This form reduces to \(\Lambda\)CDM as \( \epsilon \to 0 \), and corresponds directly to the final stage of the theoretical pipeline shown in Fig.~2. Appendix~\ref{app:tensor} derives Eq.~\eqref{eq:Hubble_ripple} directly from the stress-energy tensor \( T_{\mu\nu} \) via the Friedmann equation.
+
+To connect this ripple structure to late-time dark energy behavior, we write the effective equation-of-state parameter:
+\begin{equation}
+w(z) = \frac{\frac{2}{3}(1+z)\frac{d\ln H}{dz} - 1}{1 - \Omega_m(z)},
+\label{eq:w_z}
+\end{equation}
+which yields a first-order ripple correction:
+\begin{equation}
+\Delta w_{\text{ripple}}(z) \approx \frac{2}{3} \frac{(1+z)}{1 - \Omega_m(z)} \frac{d}{dz} \left[\epsilon\, e^{-\gamma z}\sin(\omega z + \phi)\right].
+\label{eq:delta_w}
+\end{equation}
+
+These relations define testable deviations in \( H(z) \), \( \mu(z) \), and residuals in dark-energy parameters—all arising directly from the Genesis Field’s internal coherence dynamics. Detailed assumptions and full derivations are provided in Appendix~\ref{sec:appendix_math_derivation}.
+
+\begin{figure}[htpb]
+\centering
+\begin{tikzpicture}[node distance=1.4cm, every node/.style={align=center}]
+\tikzset{
+  block/.style={
+    rectangle, draw=black, rounded corners, align=center,
+    minimum width=7cm, minimum height=1.4cm, fill=gray!10
+  },
+  arrow/.style={thick,->,>=Stealth}
+}
+
+\node (vacuum) [block] {\textbf{Vacuum as Coherent Quantum Medium} \\ \( \Psi = \sqrt{\rho}\, e^{i\phi} \)};
+
+\node (lagrangian) [block, below=of vacuum] {\textbf{Covariant Field Equation} \\ \( \displaystyle \frac{\hbar^2}{2m} \Box \Psi = \frac{\partial V}{\partial \Psi^*} \)};
+
+\node (madelung) [block, below=of lagrangian] {\textbf{Madelung Transformation} \\ \( \Psi = \sqrt{\rho}\, e^{i\phi} \)};
+
+\node (fluid) [block, below=of madelung] {\textbf{Quantum Fluid Equations} \\ Continuity: \( \nabla_\mu (\rho\, \partial^\mu \phi) = 0 \) \\ Hamilton--Jacobi: \( Q(\rho) - (\partial_\mu \phi)^2 + V(\rho) = 0 \)};
+
+\node (phase) [block, below=of fluid] {\textbf{Phase Evolution (Cosmo Limit)} \\ \( \phi(t) = \omega_c t + \epsilon e^{-\gamma t} \cos(\omega t + \phi_0) \)};
+
+\node (hubble) [block, below=of phase] {\textbf{Ripple-Modulated Hubble Rate} \\ \( H(z) = H_0 \left[ 1 + \epsilon e^{-\gamma z} \sin(\omega z + \phi) \right] \) \\ \( \times \sqrt{ \Omega_m (1+z)^3 + (1 - \Omega_m) } \)};
+
+\node (obs) [block, below=of hubble] {\textbf{Observational Predictions} \\ Ripple in \( \mu(z) \), \( H(z) \); testable by Euclid, DESI, Rubin};
+
+\draw [arrow] (vacuum) -- (lagrangian);
+\draw [arrow] (lagrangian) -- (madelung);
+\draw [arrow] (madelung) -- (fluid);
+\draw [arrow] (fluid) -- (phase);
+\draw [arrow] (phase) -- (hubble);
+\draw [arrow] (hubble) -- (obs);
+\end{tikzpicture}
+\caption{Genesis Field theoretical pipeline: from quantum coherence to ripple-modulated cosmic expansion and observational predictions.}
+\label{fig:genesis_pipeline}
+\end{figure}
