@@ -5,7 +5,7 @@ Arizona State University, Tempe, AZ, USA
 ORCID: https://orcid.org/0009-0002-2430-8184  
 Email: richvgreene@gmail.com  
 
-[Date: 2025/06/07]
+Date: 2025/06/07  
 
 Editors  
 Physical Review D  
@@ -13,20 +13,24 @@ American Physical Society
 
 Dear Editors,
 
-I am pleased to submit the manuscript titled *“Quantum Pressure and Phase Modulation in the Genesis Field: Resolving Cosmic Acceleration and Hubble Oscillations”* for your consideration for publication in *Physical Review D*, under the section “Cosmology, Gravitation, and Field Theory.”
+I am pleased to submit the manuscript titled *“Quantum Pressure and Phase Modulation in the Genesis Field: Resolving Cosmic Acceleration and Hubble Oscillations”* for consideration in *Physical Review D*, under the section “Cosmology, Gravitation, and Field Theory.”
 
-This paper introduces the **Genesis Field**, a first-principles cosmological model in which late-time cosmic acceleration arises from vacuum coherence effects—specifically, quantum pressure and global phase modulation. Derived from a covariant extension of the Gross–Pitaevskii equation, the model predicts ripple-like oscillations in the Hubble parameter \( H(z) \) without invoking new scalar fields or modifying gravity.
+This work introduces the Genesis Field, a first-principles cosmological model in which late-time acceleration arises from vacuum coherence—specifically, quantum pressure and global phase modulation. Derived from a covariant extension of the Gross–Pitaevskii equation, the model predicts ripple-like oscillations in the Hubble parameter \( H(z) \), grounded in the curvature of the vacuum potential. No new scalar fields or modifications to Einstein's equations are introduced.
 
-We benchmark the theory against the Pantheon+ Type Ia supernova sample and cosmic chronometer \( H(z) \) data, demonstrating improved residual structure, reduced \(\chi^2\), and predictive restraint under joint constraints. The ripple features, while not yet statistically required, align with known residuals and are sharply testable by upcoming high-precision surveys including Euclid, JWST, and Rubin. Notably, the model reduces exactly to \(\Lambda\)CDM in the suppressed limit and is falsifiable under a well-defined set of observational criteria.
+The ripple signature is not phenomenologically imposed: it is hand-derived (handwritten derivations included in Github) via the Madelung transformation applied to a coherent vacuum wavefunction, resulting in an observable modulation of the expansion rate. All derivations were developed from scratch and are provided in Appendix A and in fully documented form in the accompanying GitHub repository:
+  
+**https://github.com/mrrgreene/genesis-field-paper1-phase-modulation**
 
-The manuscript includes fully transparent derivations, an operational glossary, and open-source code for all figures and MCMC fits. It is the first in a five-paper research program that investigates spacetime, matter, time, and constants as emergent coherence phenomena.
+The model is empirically tested against Pantheon+ Type Ia supernova and cosmic chronometer data. It exhibits strong fits under constraint, with ripple suppression when disfavored and emergence when permitted. The model reduces smoothly to ΛCDM and introduces a sharply testable prediction in the range \( 0.5 < z < 2.0 \), to be probed by Euclid, Rubin, and JWST.
 
-To the best of my knowledge, this work presents the first cosmological theory to derive testable late-time acceleration signatures from global vacuum phase dynamics grounded in laboratory-scale quantum fluid analogs. I confirm that the manuscript is original, unpublished, and not under consideration elsewhere.
+This paper includes reproducible code, an operational glossary, and serves as the first in a five-paper series exploring how gravity, matter, time, and constants may emerge from quantum coherence. To my knowledge, this is the first cosmological model to derive late-time acceleration observables from internal phase dynamics of a coherent quantum vacuum—anchored in known analogs from Bose–Einstein condensates.
 
-Thank you for your time and thoughtful review. I look forward to the referee evaluation.
+I confirm that this manuscript is original, unpublished, and not under review elsewhere. I also disclose that AI-based tools (ChatGPT by OpenAI) were used solely to improve clarity and presentation. All scientific content, derivations, analysis, and interpretation are my own.
+
+Thank you for your consideration. I look forward to the referee review process.
 
 Sincerely,  
 Richard Greene  
-Email: richvgreene@gmail.com  
+richvgreene@gmail.com  
 ORCID: https://orcid.org/0009-0002-2430-8184  
 GitHub: https://github.com/mrrgreene/genesis-field-paper1-phase-modulation
