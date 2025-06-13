@@ -76,15 +76,16 @@ Core dependencies include:
 
 ## 📊 Mapping: Paper Sections ↔ Scripts
 
-| Paper Section      | Purpose                                     | Script |
-|--------------------|---------------------------------------------|--------|
-| **IV.A**           | SN-only MCMC with ripple suppression        | `mcmc_pantheon.py` |
-| **IV.B**           | $H(z)$ tight-fit (Ωₘ from Pantheon)         | `hz_mcmc_ripple_tight.py` |
-| **IV.C**           | $H(z)$ relaxed-fit with ripple emergence    | `hz_mcmc_ripple_relax.py` |
-| **IV.D**           | Joint SN + $H(z)$ MCMC (relaxed priors)     | `joint_mcmc.py` |
-| **Figure 11**      | Ripple parameter bar summary                | `joint_ripple_summary.py` |
-| **Appendix C**     | Residual diagnostics and analytic M         | `mcmc_m_diagnostic*.py` |
-| **Model Overlays** | Genesis vs ΛCDM SN + $H(z)$ curves          | `sn_genesis_acdm_model.py`, `hz_genesis_acdm_model.py` |
+| Paper Section        | Purpose                                                              | Script(s) |
+|----------------------|----------------------------------------------------------------------|-----------|
+| **IV.A**             | SN-only MCMC with ripple suppression (ΛCDM recovery)                | `mcmc_pantheon.py` |
+| **IV.B**             | H(z) tight-fit with Omega_m from SN (ripple suppressed)             | `hz_mcmc_ripple_tight.py` |
+| **IV.C**             | H(z) relaxed-fit with ripple activation                             | `hz_mcmc_ripple_relax.py` |
+| **IV.D**             | Joint SN + H(z) MCMC with relaxed priors                            | `joint_mcmc.py` |
+| **Figure 11**        | Ripple parameter bar chart across IV.A–IV.D                         | `joint_ripple_summary.py` |
+| **V.C**              | Fixed ripple fit (only epsilon, H0 free) — decisive test vs ΛCDM    | `hz_ripple_genesis_acdm_fixed_values.py` |
+| *Core model support* | mu(z), d_L(z), and ripple-modulated H(z) used across MCMC scripts   | `mcmc_m_diagnostic.py`, `mcmc_m_diagnostic_comparison.py` |
+| **Model Overlays**   | Genesis vs ΛCDM curve definitions for SN mu(z) and H(z)             | `sn_genesis_acdm_model.py`, `hz_genesis_acdm_model.py` |
 
 ---
 
