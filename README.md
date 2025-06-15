@@ -6,6 +6,32 @@ The Genesis Field framework treats spacetime as a quantum fluid governed by glob
 
 ---
 
+## 📘 Access Policy
+
+This repository contains the full statistical pipeline behind the Genesis Field model, including MCMC fits and ripple-modulated expansion predictions.
+
+🔒 The code is temporarily private while the manuscript is under review with journals and pending arXiv endorsement.
+
+### 🔓 Want Access?
+
+I'm happy to provide private access to researchers, reviewers, or collaborators.
+
+To endorse my submission to the `astro-ph.CO` section of arXiv, use:
+
+🔗 **https://arxiv.org/auth/endorse?x=OEVQQI**
+
+If that link doesn’t work, visit:
+
+🔗 **http://arxiv.org/auth/endorse.php**  
+and enter:
+
+🔐 **Endorsement Code: OEVQQI**
+
+Thanks for supporting open science.  
+📧 richvgreene@gmail.com
+
+---
+
 ## 📁 Project Structure
 
 ```

@@ -16,57 +16,59 @@ In particular, the model predicts ripple emergence near $z \sim 0.6$–$0.8$—a
 \subsection{Pantheon+ Calibration and MCMC Analysis}
 \label{sec:pantheon}
 
-We benchmark the Genesis Field model with the Pantheon+ Type Ia supernova dataset~\cite{Brout2022}, a comprehensive compilation of 1701 SNe~Ia spanning $0.01 < z < 2.3$. This data set provides high-precision luminosity distances calibrated using SALT2 light curve fits and anchored to the SH0ES Cepheid distance ladder~\cite{Riess2022}. A robust cosmological model must first reproduce the $\Lambda$CDM behavior under such constraints before extensions (such as the ripple mechanism) can be considered physically meaningful.\footnote{A reliable model must reproduce established results before addressing tensions.}
+We benchmark the Genesis Field model using the Pantheon+ Type Ia supernova compilation~\cite{Brout2022}, which provides 1701 SNe~Ia spanning $0.01 < z < 2.3$, including full statistical and systematic covariance~\cite{Scolnic2018}. Luminosity distances are calibrated via SALT2 light-curve fits and anchored to the SH0ES Cepheid ladder. A robust alternative to $\Lambda$CDM must first recover the standard cosmology under these stringent constraints before any ripple extension is introduced.\footnote{We fix the SH0ES absolute magnitude at $M = -0.07256 \pm 0.0040$ mag, so that $H_0$ is inferred directly from SN data while isolating ripple parameters from calibration uncertainty. All data and covariance matrices are publicly available at \url{https://github.com/dscolnic/PantheonPlus}.}
 
-We employ the complete statistical and systematic covariance matrices provided by the Pantheon+ team\footnote{Covariance matrices and data available at \url{https://github.com/dscolnic/PantheonPlus}. The calibration of SH0ES absolute magnitude is fixed at $M = -0.07256 \pm 0.0040$ mag, allowing direct inference of $H_0$ from SN data while isolating the ripple parameters from the calibration uncertainty.} A redshift cut of $z > 0.023$ is applied to minimize low-$z$ peculiar velocity contamination~\cite{Scolnic2018}, with sensitivity tests that confirm the stability of the result.
+To ensure completeness and minimize bias, we remove all ad hoc filters and apply only a low-redshift cut of $z > 0.023$ to suppress peculiar-velocity scatter. Luminosity distances are computed by evaluating a 5000-point $z$ grid and applying a cumulative trapezoidal integral of $c/H(z)$, avoiding adaptive quadrature artifacts. Sensitivity tests confirm that the results are robust against earlier $\sigma_{\mu} < 0.15$ filters.
 
-By fixing the SH0ES-calibrated magnitude, the Pantheon+ dataset tightly constrains the luminosity scale. This allows us to infer $H_0$ within the Genesis Field framework in a manner consistent with $\Lambda$CDM analyses that also adopt the Cepheid distance ladder.
+Fixing $M$ tightly constrains the absolute distance scale, allowing an MCMC exploration of
+\[
+\theta = \left[\Omega_m,\ \varepsilon,\ \omega,\ \phi,\ \gamma,\ H_0\right]
+\]
+with \texttt{emcee}, 64 walkers, and 30{,}000 steps (5000 burn-in, thinning applied), seeded with \texttt{np.random.seed(42)}. Convergence was validated via autocorrelation analysis and visual inspection.
 
-The Markov chain Monte Carlo (MCMC) sampling was performed using \texttt{emcee}, with parameter vector $\theta = [\Omega_m, \varepsilon, \omega, \phi, \gamma, H_0]$, 64 walkers, and 30{,}000 steps (5{,}000 burn-in, thinning applied). Chains were seeded (\texttt{np.random.seed(42)}), and convergence was verified by visual inspection and autocorrelation lengths.
-
-The posterior distributions (Fig.~\ref{fig:corner_pantheon}) confirm excellent convergence. The ripple amplitude $\varepsilon$ is tightly centered near zero (Table~\ref{tab:pantheon_params}), indicating that the model naturally collapses to $\Lambda$CDM without the tension of the data set. The minimal degeneracy between $\varepsilon$ and $\Omega_m$, $H_0$ supports physical interpretability rather than tuning artifacts.
-
-The residuals of the best-fit Genesis Field model show no systematic deviation (Fig.~\ref{fig:residuals_pantheon}) and yield RMS = 0.149 mag. Compared to $\Lambda$CDM (Fig.~\ref{fig:residual_comparison}), both models produce identical residual RMS (0.15341 mag), confirming that the Genesis Field does not overfit or introduce unnecessary structure.
-
-The model comparison statistics (Table~\ref{tab:pantheon_stats}) further validate this reduction. The lower AIC/BIC values for $\Lambda$CDM reflect its reduced parameter count, not its superior residual performance. Importantly, the ripple parameters did not absorb the calibration uncertainty and did not degrade parsimony, reinforcing the empirical discipline of the model.
-
-This stringent supernova calibration provides a robust baseline. The ability of Genesis Field to recover standard cosmology under tight constraints affirms its physical consistency and motivates the ripple-focused analyses in Sections~\ref{sec:hz_tight}–\ref{sec:hz_relaxed}.
+The resulting posterior medians and $1\sigma$ uncertainties (Table~\ref{tab:pantheon_params}) are
+\[
+\Omega_m = 0.36731 \pm 0.02068,\quad
+\varepsilon = -0.00005 \pm 0.00576,\quad
+H_0 = 70.2438 \pm 0.2899\ \mathrm{km\,s^{-1}\,Mpc^{-1}},
+\]
+with all ripple parameters ($\varepsilon, \omega, \phi, \gamma$) consistent with zero, demonstrating collapse to $\Lambda$CDM under constraint. Residuals exhibit no systematic structure (Fig.~\ref{fig:residuals_pantheon}), with an RMS of 0.1491\,mag. A two-parameter $\Lambda$CDM fit yields nearly identical residuals and $\chi^2/\mathrm{dof} = 0.441$, confirming that the Genesis Field does not overfit (Fig.~\ref{fig:residual_comparison}); differences in information criteria are attributable to parameter count (Table~\ref{tab:pantheon_stats}).
 
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\textwidth]{figures/sn_mcmc_residuals.pdf}
-\caption{\textbf{Pantheon+ Residuals (Genesis Field).} Residuals $ \mu_{\rm obs} - \mu_{\rm model} $ vs. redshift, RMS=0.149 mag.}
+\caption{\textbf{Residuals: Genesis Field Fit to Pantheon+.} Observed minus model distance modulus $\mu_{\rm obs} - \mu_{\rm model}$ as a function of redshift, after applying trapezoidal integration and the $z > 0.023$ cut. Residual RMS is 0.1491 mag.}
 \label{fig:residuals_pantheon}
 \end{figure}
 
 \begin{figure}[htpb]
 \centering
 \includegraphics[width=\textwidth]{figures/sn_corners.pdf}
-\caption{\textbf{Corner Plot: Pantheon+ MCMC Posterior.} Ripple amplitude $ \varepsilon $ and frequency $ \omega $ near zero confirm $ \Lambda $CDM reduction under constraint.}
+\caption{\textbf{MCMC Posterior: Pantheon+ Full Fit.} Corner plot showing marginal and joint posteriors for the full Genesis Field parameter set. Ripple parameters cluster around zero, confirming recovery of $\Lambda$CDM in the constrained limit.}
 \label{fig:corner_pantheon}
 \end{figure}
 
 \begin{figure}[htpb]
 \centering
-\includegraphics[width=\textwidth]{figures/residualcomparison.pdf}
-\caption{\textbf{Residual Comparison: Genesis Field vs. $\Lambda$CDM.} Both models achieve identical residual RMS=0.15341 mag, verifying ripple suppression matches $\Lambda$CDM without overfitting.}
+\includegraphics[width=\textwidth]{figures/residual_comparison.pdf}
+\caption{\textbf{Model Residuals: Genesis Field vs.\ $\Lambda$CDM.} Both models yield indistinguishable residual distributions (RMS = 0.1491 mag), confirming that ripple parameters do not introduce overfitting.}
 \label{fig:residual_comparison}
 \end{figure}
 
 \begin{table}[htpb]
 \centering
-\caption{\textbf{Pantheon+ Best-Fit Parameters.} Median values with $1\sigma$ uncertainties.}
+\caption{\textbf{Best-Fit Parameters: Genesis Field (Pantheon+).} Median values and $1\sigma$ credible intervals from MCMC with trapezoidal luminosity distance integration and $z > 0.023$ cut.}
 \vspace{0.5em}
 \begin{tabular}{lcc}
 \hline
-Parameter & Value & Uncertainty \\
+Parameter & Median & $1\sigma$ Uncertainty \\
 \hline
-$\Omega_m$   & 0.36711  & $\pm$ 0.02067 \\
-$\varepsilon$ & 0.00003  & $\pm$ 0.00579 \\
-$\omega$      & 0.15473  & $\pm$ 0.08364 \\
-$\phi$        & $-0.01872$ & $\pm$ 1.81879 \\
-$\gamma$      & 0.15486  & $\pm$ 0.08391 \\
-$H_0$         & 70.24282 & $\pm$ 0.28985 \\
+$\Omega_m$       & 0.36731 & $\pm\,0.02068$ \\
+$\varepsilon$    & $-0.00005$ & $\pm\,0.00576$ \\
+$\omega$         & 0.15704 & $\pm\,0.08399$ \\
+$\phi$           & $-0.01035$ & $\pm\,1.81137$ \\
+$\gamma$         & 0.15406 & $\pm\,0.08398$ \\
+$H_0$ [km\,s$^{-1}$\,Mpc$^{-1}$] & 70.2438 & $\pm\,0.2899$ \\
 \hline
 \end{tabular}
 \label{tab:pantheon_params}
@@ -74,17 +76,17 @@ $H_0$         & 70.24282 & $\pm$ 0.28985 \\
 
 \begin{table}[htpb]
 \centering
-\caption{\textbf{Fit Statistics: Genesis Field vs. $\Lambda$CDM.} Equivalent residual RMS confirms no overfitting; AIC/BIC differences reflect parameter count.}
+\caption{\textbf{Model Comparison: Fit Statistics for Genesis Field and $\Lambda$CDM.} Residual performance is identical; differences in AIC and BIC reflect model complexity.}
 \vspace{0.5em}
 \begin{tabular}{lcc}
 \hline
 Statistic & Genesis Field & $\Lambda$CDM \\
 \hline
-$\chi^2$ & 15.45 & 15.53 \\
-AIC & 27.45 & 19.53 \\
-BIC & 58.77 & 29.97 \\
-$\chi^2$/dof & 0.011 & 0.011 \\
-Residual RMS [mag] & 0.15341 & 0.15341 \\
+$\chi^2$ & 599.63 & 599.68 \\
+AIC & 611.63 & 607.68 \\
+BIC & 642.95 & 617.39 \\
+$\chi^2/\mathrm{dof}$ & 0.441 & 0.441 \\
+Residual RMS [mag] & 0.1491 & 0.1491 \\
 \# free parameters & 6 & 2 \\
 \hline
 \end{tabular}
