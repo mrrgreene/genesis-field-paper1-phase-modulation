@@ -1,19 +1,44 @@
 import numpy as np
 import matplotlib.pyplot as plt
+import json
+import os
 
-# === Best-fit values and 1σ errors from your sections ===
+# === Load MCMC summaries from JSON files in output/ folder ===
+output_dir = "output"
+pantheon_path = os.path.join(output_dir, "sn_mcmc_pantheon_summary.json")
+joint_path = os.path.join(output_dir, "joint_mcmc_acdm_comparison_summary.json")
+
+with open(pantheon_path) as f:
+    pantheon_summary = json.load(f)
+
+with open(joint_path) as f:
+    joint_summary = json.load(f)
+
+# === Hardcoded H(z) Relaxed (no JSON available) ===
+hz_relaxed = {
+    "ε":  (-0.03995, 0.08142),
+    "ω":  (0.75323, 0.23061),
+    "γ":  (0.32725, 0.27892)
+}
+
+# === Extract parameters of interest ===
 labels = ["ε", "ω", "γ"]
+pantheon = pantheon_summary["best_fit"]
+pantheon_err = pantheon_summary["uncertainty"]
 
-# Replace with your actual post-fit numbers
+joint = joint_summary["best_fit"]
+joint_err = joint_summary["uncertainty"]
+
+# === Prepare bar chart data ===
 means = {
-    "Pantheon+": [-0.00003, 0.15473, 0.15486],
-    "H(z) Relaxed": [-0.03995, 0.75323, 0.32725],
-    "Joint Relaxed": [-0.00017, 0.56960, 0.24526]
+    "Pantheon+": [pantheon[l] for l in labels],
+    "H(z) Relaxed": [hz_relaxed[l][0] for l in labels],
+    "Joint Relaxed": [joint[l] for l in labels]
 }
 errors = {
-    "Pantheon+": [0.00579, 0.08364, 0.08391],
-    "H(z) Relaxed": [0.08142, 0.23061, 0.27892],
-    "Joint Relaxed": [0.01232, 0.28998, 0.14243]
+    "Pantheon+": [pantheon_err[l] for l in labels],
+    "H(z) Relaxed": [hz_relaxed[l][1] for l in labels],
+    "Joint Relaxed": [joint_err[l] for l in labels]
 }
 
 # === Bar Plot ===
