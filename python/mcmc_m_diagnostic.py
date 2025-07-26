@@ -8,6 +8,9 @@ import multiprocessing
 import emcee
 import matplotlib.pyplot as plt
 
+# ✅ Set random seed for reproducibility
+np.random.seed(42)
+
 def reshape_cov(raw, n):
     arr = raw.flatten()
     if arr.size == n*n:
@@ -30,7 +33,6 @@ def dL_ripple(zarr, theta):
     Om, eps, omega, phi, gamma, H0 = theta
     c = 299792.458  # km/s
     def integrand(zp):
-        # correct: c / H(z') inside the integral
         return c / ripple_Hz(zp, Om, eps, omega, phi, gamma, H0)
     return np.array([
         (1 + zi) * quad(integrand, 0, zi)[0]
@@ -42,7 +44,6 @@ def mu0_model(zarr, theta):
 
 def log_probability(theta, z, mu_obs, invC, M_locked):
     Om, eps, omega, phi, gamma, H0 = theta
-    # Tighter, physically motivated priors
     if not (0.05   < Om    < 0.5):    return -np.inf
     if not (-0.01  < eps   < 0.01):   return -np.inf
     if not (0.01   < omega < 0.3):    return -np.inf
@@ -89,13 +90,17 @@ def main():
 
     M_locked = M_analytic
     ndim, nwalkers, nsteps = len(theta0), 32, 500
+
+    # ✅ Apply seed again before walker sampling
+    np.random.seed(42)
+
     p0 = np.column_stack([
-        np.random.uniform(0.2, 0.4,   nwalkers),  # Om
-        np.random.uniform(-0.005,0.005,nwalkers),  # eps
-        np.random.uniform(0.05,0.25,  nwalkers),  # omega
-        np.random.uniform(-1,1,       nwalkers),  # phi
-        np.random.uniform(0.05,0.2,   nwalkers),  # gamma
-        np.random.uniform(67,70,      nwalkers)   # H0
+        np.random.uniform(0.2, 0.4,   nwalkers),
+        np.random.uniform(-0.005,0.005,nwalkers),
+        np.random.uniform(0.05,0.25,  nwalkers),
+        np.random.uniform(-1,1,       nwalkers),
+        np.random.uniform(0.05,0.2,   nwalkers),
+        np.random.uniform(67,70,      nwalkers)
     ])
 
     sampler = emcee.EnsembleSampler(
@@ -125,7 +130,6 @@ def main():
         plt.title(title)
     plt.tight_layout(); plt.show()
 
-    # sanity checks at z=0.1
     theta_test = [0.3, 0.0, 0.2, 0.0, 0.1, 70.0]
     dL_r = dL_ripple(np.array([0.1]), theta_test)[0]
     mu_r = 5*np.log10(dL_r)+25

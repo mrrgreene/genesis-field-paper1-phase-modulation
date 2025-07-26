@@ -15,7 +15,7 @@ np.random.seed(42)
 
 # === Constants ===
 c = 299792.458  # km/s
-M_locked = -0.07256  # Updated from diagnostic calibration
+M_locked = -0.07382  # Updated from diagnostic calibration
 
 # === Load Pantheon+SH0ES data with low-z cut only ===
 script_dir = os.path.dirname(os.path.abspath(__file__))
