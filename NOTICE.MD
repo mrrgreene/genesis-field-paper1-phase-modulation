@@ -1,4 +1,4 @@
-# ❗ NOTICE: This Repository Has Been Superseded
+# ❗ NOTICE: This Repository Has Been Superseded!
 
 This repository was archived on **July 25, 2025** and is no longer maintained.
 
